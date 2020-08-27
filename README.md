@@ -5,9 +5,9 @@ Zulipzilla is a simple [Bugzilla](https://www.bugzilla.org/) extension that post
 
 Clone this project into your bugzilla extensions directory. The `disabled` file will prevent the extension from being loaded (before you configure it)
 
-Create a new Incoming webhook in Zulip and set in `Credentials.pm` its `BOT EMAIL` and its `API KEY`.
+Create a new Incoming webhook in Zulip and set in `lib/Credentials.pm` its `BOT EMAIL` and its `API KEY`.
 
-Copy of the file `Credentials.pm.template` into `Credentials.pm`, and modify the content of `Credentials.pm`:
+Copy of the file `lib/Credentials.pm.template` into `lib/Credentials.pm`, and modify the content of `lib/Credentials.pm`:
 - set the `BOT EMAIL` and the `API KEY` of the Zulip incoming webhook
 - set also the URL of the Zulip server and the URL of the Bugzilla server.
 
