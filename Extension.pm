@@ -15,23 +15,15 @@ use base qw(Bugzilla::Extension);
 use HTTP::Request::Common;
 use JSON;
 use LWP::UserAgent;
+use Bugzilla::Extension::Zulipzilla::Credentials;
 
 our $VERSION = '0.01';
-
-# TODO: Inject a form in the admin panel where these can be set:
-my %CONFIG = (
-	uri => 'https://zulip.lemoine.tech/api/v1/',
-	server => 'zulip.lemoine.tech:443',
-	botemail => 'lemoineatbugs-bot@zulip.lemoine.tech',
-	apikey => 'VvrkXIaOxwTtBoMPwfg99ncazkWRmjPS',
-	bugzillaURI => 'http://bugs.lemoine.tech/',
-);
 
 my $userAgent = LWP::UserAgent->new();
 $userAgent->credentials (
 	$CONFIG{'server'},
 	'zulip',
-        $CONFIG{'botemail'},
+  $CONFIG{'botemail'},
 	$CONFIG{'apikey'}
 );
 
